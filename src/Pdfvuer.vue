@@ -9,7 +9,7 @@
 </template>
 <script>
   'use strict';
-  import { getDocument } from 'pdfjs-dist';
+  import { getDocument, GlobalWorkerOptions } from 'pdfjs-dist';
   import {
     DefaultAnnotationLayerFactory,
     DefaultTextLayerFactory,
@@ -17,12 +17,12 @@
     PDFLinkService,
     PDFPageView,
     EventBus,
-    GlobalWorkerOptions
+    
   } from 'pdfjs-dist/web/pdf_viewer.js';
   import resizeSensor from './resize.vue'
+
   import PdfjsWorker from 'pdfjs-dist/build/pdf.worker.entry'
   GlobalWorkerOptions.workerSrc = PdfjsWorker;
-
   
   function isPDFDocumentLoadingTask(obj) {
     return typeof (obj) === 'object' && obj !== null && obj.__PDFDocumentLoadingTask === true;
