@@ -21,8 +21,8 @@
   } from 'pdfjs-dist/web/pdf_viewer.js';
   import resizeSensor from './resize.vue'
 
-  import PdfjsWorker from 'pdfjs-dist/build/pdf.worker.entry'
-  GlobalWorkerOptions.workerSrc = PdfjsWorker;
+  
+  GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.5.207/pdf.worker.min.js`
   
   function isPDFDocumentLoadingTask(obj) {
     return typeof (obj) === 'object' && obj !== null && obj.__PDFDocumentLoadingTask === true;
